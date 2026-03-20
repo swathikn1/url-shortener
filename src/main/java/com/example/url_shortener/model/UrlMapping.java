@@ -11,19 +11,20 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Url {
+public class UrlMapping {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false, length = 2048)
     private String originalUrl;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String shortCode;
 
-    private Long clickCount=0L;
+    private Long clickCount;
 
     private LocalDateTime createdAt;
 
-    private LocalDateTime expiryDate;
+    private LocalDateTime expiryAt;
 }
