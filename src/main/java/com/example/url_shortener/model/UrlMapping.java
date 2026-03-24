@@ -16,7 +16,7 @@ public class UrlMapping {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 2048)
+    @Column(nullable = false)
     private String originalUrl;
 
     @Column(unique = true, nullable = false)

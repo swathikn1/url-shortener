@@ -35,7 +35,6 @@ public class UrlServiceImpl implements UrlService {
 
         String code;
 
-
         if (request.getCustomCode() != null && !request.getCustomCode().isBlank()) {
 
             if (repository.existsByShortCode(request.getCustomCode())) {

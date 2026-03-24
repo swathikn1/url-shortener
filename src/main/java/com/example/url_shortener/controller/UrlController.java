@@ -1,7 +1,7 @@
 package com.example.url_shortener.controller;
 
-
 import com.example.url_shortener.dto.request.UrlRequest;
+import com.example.url_shortener.dto.response.ApiResponse;
 import com.example.url_shortener.dto.response.UrlResponse;
 import com.example.url_shortener.service.UrlService;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +23,6 @@ public class UrlController {
     @PostMapping("/shorten")
     public ResponseEntity<UrlResponse> shorten(
             @RequestBody UrlRequest request) {
-
         return ResponseEntity.ok(service.createShortUrl(request));
     }
 
@@ -53,7 +52,6 @@ public class UrlController {
     public ResponseEntity<Page<UrlResponse>> getAll(
             @RequestParam int page,
             @RequestParam int size) {
-
         return ResponseEntity.ok(service.getAllUrls(page, size));
     }
 }
